@@ -1,0 +1,30 @@
+toernooi
+t_id (PK)
+t_omschrijving
+t_datum
+
+Aanmeldingen
+a_id (FK)
+s_id (FK)
+t_id (FK)
+
+Speler
+s_id (PK)
+s_naam
+s_tussenvoegsel
+s_achternaam
+sch_id (FK) -- inner join kan je de bijbehorende scholen ophalen van spelerss
+
+School
+sch_id (PK)
+sch_naam
+
+Wedstrijden
+w_id (PK)
+t_id (FK)
+w_ronde
+s_speler1id (FK)
+s_speler2id (FK)
+w_score1
+w_score2
+s_winnaarid (FK)

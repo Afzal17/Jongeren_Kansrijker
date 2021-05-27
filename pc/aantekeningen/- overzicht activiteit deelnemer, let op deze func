@@ -1,0 +1,77 @@
+- overzicht activiteit deelnemer, let op deze functie is belangrijk om te maken
+-- crud overzicht hoe dipslay je een foreign key volledig ipv id gwn gebruikersnaam bijv in overzicht
+-- en hoe edit je deze, zie jongere kansrijker en toernooi crud db
+
+-- unique toevoegen in database bij gebruikersnaam
+
+
+--
+
+
+<!--
+		<div class="form_form">
+			<div class="content">
+				<form action="medewerker_homepage.php" method="POST">
+					<p>Selecteer de gewenste activiteit</p>
+
+						<select name="activiteitinfo" id="activiteitinfo">
+
+							<?php foreach($activiteitinfo as $activiteit) { ?>
+								<option value ="<?php echo $activiteit['id']?>">
+									<?php echo $activiteit['activiteit']; ?>
+								</option>
+							<?php } ?>
+
+						</select>
+
+				</form>
+			</div>
+		</div>
+		-->
+
+
+
+
+
+
+		<!--
+ 		<p>Dit is alleen een voorbeeld ter illustratie</p>
+		<div class="form_form">
+			<div class="content">
+				<form action="medewerker_homepage.php" method="POST">
+					<p>Selecteer de gewenste activiteit</p>
+
+						<select name="activiteitinfo" id="activiteitinfo">
+
+							<?php foreach($activiteitinfo as $activiteit) { ?>
+								<option value ="<?php echo $activiteit['id']?>">
+									<?php echo $activiteit['activiteit']; ?>
+								</option>
+							<?php } ?>
+
+						</select>
+
+				</form>
+			</div>
+		</div>
+		-->
+
+
+		SELECT ja.jongere_id, CONCAT(j.voornaam, " ", j.tussenvoegsel, " ",j.achternaam) AS naam, a.activiteit
+FROM jongereactiviteit AS ja
+INNER JOIN jongere AS j
+ON ja.jongere_id = j.id
+INNER JOIN activiteit AS a
+ON ja.activiteit_id = a.id
+
+
+
+SELECT ja.jongere_id, CONCAT(j.voornaam, " ", j.tussenvoegsel, " ",j.achternaam) AS naam, a.activiteit, ja.startdatum, ja.afgerond
+FROM jongereactiviteit AS ja
+INNER JOIN jongere AS j
+ON ja.jongere_id = j.id
+INNER JOIN activiteit AS a
+ON ja.activiteit_id = a.id
+
+SELECT id, CONCAT(voornaam, " ",tussenvoegsel, " ",achternaam) FROM jongere
+
